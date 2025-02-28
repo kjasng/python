@@ -35,9 +35,8 @@ links = get_links()
 
 # Loop through each link
 for link in links:
-    i=0
     driver.get(link)  # Navigate to the current link
-    print('Chay profile thu ',i+1)
+    print('Đang chạy link: ', link)
     # Give the page some time to load
     time.sleep(10)
 
@@ -47,11 +46,12 @@ for link in links:
 
     # Auto-click loop
     for _ in range(num_clicks):
+
         button.click()  # Click the button
         time.sleep(3)   # Wait for 1 second between clicks
         button2 = driver.find_element(By.ID, ':r0:')
         button2.click()
-        time.sleep(7)   # Wait for 1 second between clicks
+        time.sleep(3)   # Wait for 1 second between clicks
         button3 = driver.find_element(By.CLASS_NAME, 'jss53')
         button3.click()
         time.sleep(7)   # Wait for 1 second between clicks
@@ -66,6 +66,7 @@ for link in links:
         button5.click()
 
 
-        time.sleep(5)
+        time.sleep(10)
 
-        i+=1
+
+driver.quit()
